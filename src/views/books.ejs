@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library Management</title>
+    <link rel = "stylesheet " href = "/css/style.css">
+    <link rel = "stylesheet" href = "/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar-->
+
+    <nav class = "navbar navbar-custom col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        </div class = "container-fluid">
+            <ul class = "nav ">
+
+            <%for(var i=0;i<nav.length;i++){%>    
+                <li class = "navbar-item ">
+            <a  class = "item" href = <%=nav[i].link%>><%=nav[i].title%></a> 
+                </li>
+            <%}%>
+            </ul>
+        </div>
+        <div>
+        </div>
+    </nav>
+     
+    <!--Top Part-->
+
+    <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "top">
+        <div class = "col-sm-2 col-md-2 col-lg-6 col-xl-6 float-left" id = "top-heading">
+            <h1 class = "display-3 font-weight-bold"><%=title%></h1>
+        </div>
+            <div class = "col-sm-2 col-md-4 col-lg-4 col-xl-4 float-right" id = "top-right-box"> 
+        </div>
+    </div>
+
+    <!--Main Content-->
+
+    <div class = "jumbotron col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "main">
+        <div class = "container-fluid col-sm-10 col-md-10 col-lg-12 colg-xl-12" id = "content">
+
+           <%for(var i=0;i<books.length;i++){%>
+               <img src="/Images/<%=books[i].imagename%>" style="width:10%; height:10%; border-radius: 50px" > 
+               <div class="text-left font-weight-bold">
+                   <%=books[i].booktitle%><br>
+                   <%=books[i].genre%><br>
+                   <%=books[i].authorname%><br>
+                   <a href="/books/<%=i%>" class="text-muted">Read more</a></small> 
+                   <hr>
+
+            <%}%>
+            </div>
+        </div>
+       
+    </div>
+   
+       
+    <script src = "/js/form.js"></script>
+</body>
+</html>
